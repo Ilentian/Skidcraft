@@ -2,6 +2,7 @@ package wtf.kiddo.skidcraft.mod;
 
 import net.minecraft.client.Minecraft;
 import wtf.kiddo.skidcraft.Client;
+import wtf.kiddo.skidcraft.mod.data.IToggable;
 import wtf.kiddo.skidcraft.value.Value;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * Author: zcy
  * Created: 2022/5/1
  */
-public abstract class Mod {
+public class Mod implements IToggable {
     private String label, suffix;
     private boolean enabled;
     private int key;
@@ -21,10 +22,6 @@ public abstract class Mod {
         this.label = label;
         this.category = category;
     }
-
-    protected abstract void onEnable();
-
-    protected abstract void onDisable();
 
     public String getLabel() {
         return label;

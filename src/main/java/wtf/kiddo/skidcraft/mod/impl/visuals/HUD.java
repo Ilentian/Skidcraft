@@ -28,14 +28,4 @@ public final class HUD extends Mod {
             }
         }
     }
-
-    @Override
-    protected void onEnable() {
-
-    }
-
-    @Override
-    protected void onDisable() {
-
-    }
 }

@@ -16,16 +16,6 @@ public final class Sprint extends Mod {
         super("Sprint", Category.PLAYER);
     }
 
-    @Override
-    protected void onEnable() {
-
-    }
-
-    @Override
-    protected void onDisable() {
-
-    }
-
     @EventListener
     public void onUpdateEvent(final UpdateEvent event) {
         if (event.isPre() && getMc().thePlayer.movementInput.moveForward > 0.0 && !getMc().thePlayer.isSneaking() && !getMc().thePlayer.isCollidedHorizontally && !getMc().thePlayer.isUsingItem() && getMc().thePlayer.getFoodStats().getFoodLevel() > 6) {

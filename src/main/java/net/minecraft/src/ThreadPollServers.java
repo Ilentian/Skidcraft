@@ -46,7 +46,11 @@ class ThreadPollServers extends Thread
                             catch (UnknownHostException var35)
                             {
                                 this.pollServersServerData.pingToServer = -1L;
-                                this.pollServersServerData.serverMOTD = EnumChatFormatting.DARK_RED + "Can\'t resolve hostname";
+                                if(pollServersServerData.serverIP.startsWith("ws://") || pollServersServerData.serverIP.startsWith("wss://")) {
+                                    this.pollServersServerData.serverMOTD = EnumChatFormatting.GOLD + "Eaglercraft Server";
+                                } else {
+                                    this.pollServersServerData.serverMOTD = EnumChatFormatting.DARK_RED + "Can\'t resolve hostname";
+                                }
                                 var27 = false;
                                 break label184;
                             }

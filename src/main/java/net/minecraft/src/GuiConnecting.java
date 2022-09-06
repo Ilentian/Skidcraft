@@ -1,9 +1,17 @@
 package net.minecraft.src;
 
 import net.minecraft.client.Minecraft;
+import wtf.kiddo.skidcraft.util.WebSocket2Socket;
+
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class GuiConnecting extends GuiScreen
 {
+
+    private static final ExecutorService executorService = Executors.newFixedThreadPool(10);
+
     /** A reference to the NetClientHandler. */
     private NetClientHandler clientHandler;
 
@@ -32,6 +40,12 @@ public class GuiConnecting extends GuiScreen
     private void spawnNewServerThread(String par1Str, int par2)
     {
         this.mc.getLogAgent().logInfo("Connecting to " + par1Str + ", " + par2);
+        if(par1Str.startsWith("wss://") || par1Str.startsWith("ws://")) {
+            final int port = new Random().nextInt(65535);
+            executorService.execute(new WebSocket2Socket(par1Str, port));
+            par1Str = "127.0.0.1";
+            par2 = port;
+        }
         (new ThreadConnectToServer(this, par1Str, par2)).start();
     }
 

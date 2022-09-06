@@ -19,15 +19,6 @@ public final class Colors extends Mod {
         super("Colors", Category.GLOBAL);
     }
 
-    @Override
-    protected void onEnable() {
-
-    }
-
-    @Override
-    protected void onDisable() {
-
-    }
 
     public static int getClientColorCustomAlpha(int alpha){
         Color color = setAlpha(new Color(Color.HSBtoRGB(hue.getValue(), saturation.getValue() / 100f, lightness.getValue() / 100f)), alpha);

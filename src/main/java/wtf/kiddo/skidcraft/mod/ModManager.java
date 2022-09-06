@@ -3,6 +3,7 @@ package wtf.kiddo.skidcraft.mod;
 import me.bush.eventbus.annotation.EventListener;
 import wtf.kiddo.skidcraft.Client;
 import wtf.kiddo.skidcraft.event.KeyInputEvent;
+import wtf.kiddo.skidcraft.mod.impl.combat.AntiVelocity;
 import wtf.kiddo.skidcraft.mod.impl.exploits.Disabler;
 import wtf.kiddo.skidcraft.mod.impl.global.Colors;
 import wtf.kiddo.skidcraft.mod.impl.player.Sprint;
@@ -10,6 +11,7 @@ import wtf.kiddo.skidcraft.mod.impl.visuals.ClickGUI;
 import wtf.kiddo.skidcraft.mod.impl.visuals.ESP;
 import wtf.kiddo.skidcraft.mod.impl.visuals.HUD;
 import wtf.kiddo.skidcraft.mod.impl.visuals.Xray;
+import wtf.kiddo.skidcraft.mod.impl.world.Fly;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +29,8 @@ public final class ModManager {
     }
 
     public void initializeMods() {
+        registerMod(Fly.class);
+        registerMod(AntiVelocity.class);
         registerMod(HUD.class);
         registerMod(ClickGUI.class);
         registerMod(Colors.class);

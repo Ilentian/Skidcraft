@@ -46,16 +46,6 @@ public final class ESP extends Mod {
         super("2DESP", Category.VISUALS);
     }
 
-    @Override
-    protected void onEnable() {
-
-    }
-
-    @Override
-    protected void onDisable() {
-
-    }
-
     private boolean isValid(EntityLiving entity) {
         return getMc().thePlayer != entity && entity.entityId != -1488 && isValidType(entity) && entity.isEntityAlive() && (!entity.isInvisible() || invisibles.getValue());
     }

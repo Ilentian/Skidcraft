@@ -19,7 +19,7 @@ public final class Xray extends Mod {
     }
 
     @Override
-    protected void onEnable() {
+    public void onEnable() {
         KEY_IDS.add(Block.oreGold.blockID);
         KEY_IDS.add(Block.oreDiamond.blockID);
         KEY_IDS.add(Block.oreIron.blockID);
@@ -29,7 +29,7 @@ public final class Xray extends Mod {
     }
 
     @Override
-    protected void onDisable() {
+    public void onDisable() {
         KEY_IDS.clear();
         getMc().renderGlobal.loadRenderers();
     }

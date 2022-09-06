@@ -17,13 +17,13 @@ public final class ClickGUI extends Mod {
     }
 
     @Override
-    protected void onEnable() {
+    public void onEnable() {
         Minecraft.getMinecraft().displayGuiScreen(GuiInstance.getInstance());
         setEnabled(false);
     }
 
     @Override
-    protected void onDisable() {
+    public void onDisable() {
 
     }
 }

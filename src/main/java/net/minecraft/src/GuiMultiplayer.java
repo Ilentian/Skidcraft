@@ -8,7 +8,6 @@ import java.net.Socket;
 import java.util.Collections;
 import java.util.List;
 import org.lwjgl.input.Keyboard;
-import wtf.kiddo.skidcraft.gui.screen.GuiEaglercraftConnect;
 
 public class GuiMultiplayer extends GuiScreen
 {
@@ -203,10 +202,6 @@ public class GuiMultiplayer extends GuiScreen
             else if (par1GuiButton.id == 8)
             {
                 this.mc.displayGuiScreen(new GuiMultiplayer(this.parentScreen));
-            }
-            else if (par1GuiButton.id == 69)
-            {
-                this.mc.displayGuiScreen(new GuiEaglercraftConnect());
             }
             else
             {

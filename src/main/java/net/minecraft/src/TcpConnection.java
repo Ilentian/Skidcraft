@@ -171,7 +171,9 @@ public class TcpConnection implements INetworkManager
                 this.sendQueueByteLength += par1Packet.getPacketSize() + 1;
                 final PacketEvent event = new PacketEvent(par1Packet, PacketEvent.Type.SENT);
                 Client.INSTANCE.getEventBus().post(event);
-                this.dataPackets.add(event.getPacket());
+                if(!event.isCancelled()) {
+                    this.dataPackets.add(event.getPacket());
+                }
             }
         }
     }
@@ -322,8 +324,9 @@ public class TcpConnection implements INetworkManager
             final PacketEvent event = new PacketEvent(Packet.readPacket(this.field_98215_i, this.socketInputStream, this.theNetHandler.isServerHandler(), this.networkSocket), PacketEvent.Type.RECEIVED);
             Client.INSTANCE.getEventBus().post(event);
             Packet var2 = event.getPacket();
-            if (var2 != null && !event.isCancelled())
+            if (var2 != null)
             {
+                if(event.isCancelled()) return false;
                 if (var2 instanceof Packet252SharedKey && !this.isInputBeingDecrypted)
                 {
                     if (this.theNetHandler.isServerHandler())

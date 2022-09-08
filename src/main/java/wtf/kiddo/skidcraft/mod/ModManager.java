@@ -4,14 +4,18 @@ import me.bush.eventbus.annotation.EventListener;
 import wtf.kiddo.skidcraft.Client;
 import wtf.kiddo.skidcraft.event.KeyInputEvent;
 import wtf.kiddo.skidcraft.mod.impl.combat.AntiVelocity;
+import wtf.kiddo.skidcraft.mod.impl.combat.Criticals;
 import wtf.kiddo.skidcraft.mod.impl.exploits.Disabler;
 import wtf.kiddo.skidcraft.mod.impl.global.Colors;
+import wtf.kiddo.skidcraft.mod.impl.player.NoSlowDown;
 import wtf.kiddo.skidcraft.mod.impl.player.Sprint;
 import wtf.kiddo.skidcraft.mod.impl.visuals.ClickGUI;
 import wtf.kiddo.skidcraft.mod.impl.visuals.ESP;
 import wtf.kiddo.skidcraft.mod.impl.visuals.HUD;
 import wtf.kiddo.skidcraft.mod.impl.visuals.Xray;
+import wtf.kiddo.skidcraft.mod.impl.world.AntiCrash;
 import wtf.kiddo.skidcraft.mod.impl.world.Fly;
+import wtf.kiddo.skidcraft.mod.impl.world.Strafe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +42,10 @@ public final class ModManager {
         registerMod(Sprint.class);
         registerMod(Disabler.class);
         registerMod(Xray.class);
+        registerMod(NoSlowDown.class);
+        registerMod(Criticals.class);
+        registerMod(Strafe.class);
+        registerMod(AntiCrash.class);
     }
 
     private void registerMod(Class<? extends Mod> moduleClass) {

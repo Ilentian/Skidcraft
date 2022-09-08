@@ -35,16 +35,9 @@ class TaskWorldCreation extends TaskLongRunning
         catch (ExceptionMcoService var4)
         {
             this.func_96575_a(var4.field_96391_b);
-        }
-        catch (UnsupportedEncodingException var5)
+        } catch (IOException ignored)
         {
-            ;
-        }
-        catch (IOException var6)
-        {
-            ;
-        }
-        catch (Exception var7)
+        } catch (Exception var7)
         {
             this.func_96575_a("Failed");
         }

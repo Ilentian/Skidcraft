@@ -29,7 +29,7 @@ public class PlayerControllerMP
     /**
      * Delays the first damage on the block after the first click on the block
      */
-    private int blockHitDelay = 0;
+    public int blockHitDelay = 0;
 
     /** Tells if the player is hitting a block */
     private boolean isHittingBlock = false;

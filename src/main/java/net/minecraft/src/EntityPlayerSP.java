@@ -1,6 +1,8 @@
 package net.minecraft.src;
 
 import net.minecraft.client.Minecraft;
+import wtf.kiddo.skidcraft.Client;
+import wtf.kiddo.skidcraft.mod.impl.player.NoSlowDown;
 
 public class EntityPlayerSP extends EntityPlayer
 {
@@ -166,9 +168,11 @@ public class EntityPlayerSP extends EntityPlayer
 
             if (this.isUsingItem())
             {
-                this.movementInput.moveStrafe *= 0.2F;
-                this.movementInput.moveForward *= 0.2F;
-                this.sprintToggleTimer = 0;
+                if(!Client.INSTANCE.getModManager().getModClass(NoSlowDown.class).isEnabled()) {
+                    this.movementInput.moveStrafe *= 0.2F;
+                    this.movementInput.moveForward *= 0.2F;
+                    this.sprintToggleTimer = 0;
+                }
             }
 
             if (this.movementInput.sneak && this.ySize < 0.2F)

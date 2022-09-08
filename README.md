@@ -1,7 +1,7 @@
 <h1 align="center">Skidcraft</h1>
-<h4 align="center">下世代国产自主知识产权宏内核跨平台混合边缘计算并行加速编译优化Minecraft 1.5.2乾坤辅助</h4>
+<h4 align="center">eaglercraft minecraft 1.5.2 cheat</h4>
 
-## 创建工作空间
+## Create WorkSpace
 ### IDEA
 ```
 .\gradlew idea
